@@ -11,7 +11,7 @@ const variantStyles: Record<NonNullable<ButtonProps["variant"]>, string> = {
   secondary:
     "bg-white text-slate-900 border border-slate-200 hover:bg-slate-50 focus-visible:outline-slate-300",
   ghost:
-    "bg-transparent text-slate-900 hover:bg-slate-100 focus-visible:outline-slate-200"
+    "bg-transparent text-slate-900 hover:bg-slate-100 focus-visible:outline-slate-200",
 };
 
 export const Button = forwardRef<HTMLButtonElement, ButtonProps>(
@@ -19,7 +19,7 @@ export const Button = forwardRef<HTMLButtonElement, ButtonProps>(
     const classes = [
       "inline-flex items-center justify-center gap-2 rounded-md px-4 py-2 text-sm font-medium transition-colors focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 disabled:cursor-not-allowed disabled:opacity-50",
       variantStyles[variant],
-      className
+      className,
     ]
       .filter(Boolean)
       .join(" ");
