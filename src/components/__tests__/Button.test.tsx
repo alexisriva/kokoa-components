@@ -1,7 +1,7 @@
 import { render, screen } from "@testing-library/react";
 import { createRef } from "react";
 
-import { Button } from "../Button";
+import { Button } from "../atoms/Button";
 import { describe, expect, it } from "vitest";
 
 describe("Button", () => {
@@ -11,7 +11,9 @@ describe("Button", () => {
     const button = screen.getByRole("button", { name: "Click me" });
     expect(button).toBeInTheDocument();
     expect(button).toHaveAttribute("type", "button");
-    expect(button).toHaveClass("bg-slate-900");
+    expect(button).toHaveClass("kokoa-variant-primary");
+    expect(button).not.toHaveClass("kokoa-border-secondary");
+    expect(button).toHaveClass("transition-colors");
   });
 
   it("applies variant styles and merges custom className", () => {
@@ -22,9 +24,10 @@ describe("Button", () => {
     );
 
     const button = screen.getByRole("button", { name: "Submit" });
-    expect(button).toHaveClass("bg-white");
+    expect(button).toHaveClass("kokoa-variant-secondary");
+    expect(button).toHaveClass("kokoa-border-secondary");
     expect(button).toHaveClass("custom-class");
-    expect(button).not.toHaveClass("bg-slate-900");
+    expect(button).not.toHaveClass("kokoa-variant-primary");
   });
 
   it("forwards refs to the underlying button element", () => {

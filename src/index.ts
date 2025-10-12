@@ -1,4 +1,5 @@
 import "./index.css";
 
-export { Button } from "./components/Button";
-export type { ButtonProps } from "./components/Button";
+export * from "./components/atoms";
+export * from "./components/molecules";
+export type { ComponentVariant } from "./theme/variants";
