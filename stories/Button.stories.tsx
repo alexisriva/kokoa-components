@@ -6,25 +6,25 @@ const meta: Meta<typeof Button> = {
   component: Button,
   args: {
     children: "Button",
-    variant: "primary"
-  }
+    variant: "primary",
+  },
 };
 
 export default meta;
 type Story = StoryObj<typeof Button>;
 
 export const Primary: Story = {
-  args: {}
+  args: {},
 };
 
 export const Secondary: Story = {
   args: {
-    variant: "secondary"
-  }
+    variant: "secondary",
+  },
 };
 
 export const Ghost: Story = {
   args: {
-    variant: "ghost"
-  }
+    variant: "ghost",
+  },
 };
