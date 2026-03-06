@@ -125,11 +125,12 @@ export const Dropdown = forwardRef<HTMLDivElement, DropdownProps>(
           type="button"
           onClick={() => !disabled && setIsOpen(!isOpen)}
           disabled={disabled}
+          data-state={isOpen ? "open" : "closed"}
           className={`
             flex w-full min-w-[12rem] items-center justify-between rounded-lg px-4 py-2.5 text-sm font-medium
             ${baseInteractiveClasses}
             ${variantClasses}
-            ${isOpen ? "ring-2 ring-slate-500 z-10" : ""}
+            ${isOpen ? "outline outline-2 outline-offset-2 z-10" : ""}
           `}
         >
           <div className="flex items-center gap-3">
@@ -146,7 +147,9 @@ export const Dropdown = forwardRef<HTMLDivElement, DropdownProps>(
         </button>
 
         {isOpen && (
-          <div className="absolute left-0 top-full z-50 mt-2 w-full min-w-[12rem] origin-top-left rounded-lg border border-slate-200 bg-white p-1 shadow-xl ring-1 ring-black/5 dark:border-slate-800 dark:bg-slate-950">
+          <div
+            className={`absolute left-0 top-full z-50 mt-2 w-full min-w-[12rem] origin-top-left rounded-lg p-1 shadow-xl ring-1 ring-black/5 ${variantClasses}`}
+          >
             <div className="flex flex-col gap-1 max-h-60 overflow-auto">
               {options.map((option) => {
                 const isSelected = option.value === value;
@@ -157,18 +160,12 @@ export const Dropdown = forwardRef<HTMLDivElement, DropdownProps>(
                     disabled={option.disabled}
                     className={`
                       group flex w-full items-center justify-between rounded-md px-3 py-2.5 text-sm transition-colors text-left
-                      ${
-                        isSelected
-                          ? "bg-slate-100 text-slate-900 dark:bg-slate-800 dark:text-white"
-                          : "text-slate-600 hover:bg-slate-50 hover:text-slate-900 dark:text-slate-400 dark:hover:bg-slate-900 dark:hover:text-slate-200"
-                      }
+                      ${composeVariantClasses(variant, { includeBorder: false })}
                       ${option.disabled ? "cursor-not-allowed opacity-50" : "cursor-pointer"}
                     `}
                   >
                     <span className="font-medium">{option.label}</span>
-                    {isSelected && (
-                      <CheckIcon className="h-4 w-4 text-slate-500" />
-                    )}
+                    {isSelected && <CheckIcon className="h-4 w-4 opacity-70" />}
                   </button>
                 );
               })}

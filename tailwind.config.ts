@@ -7,7 +7,7 @@ type VariantKey = "primary" | "secondary" | "ghost";
 const config: Config = {
   content: ["./src/**/*.{ts,tsx}", "./stories/**/*.{ts,tsx,mdx}"],
   theme: {
-    extend: {}
+    extend: {},
   },
   plugins: [
     plugin(({ addComponents, addUtilities, theme }) => {
@@ -28,7 +28,7 @@ const config: Config = {
           hoverBackground: theme("colors.slate.800") as string,
           outline: theme("colors.slate.900") as string,
           border: "transparent",
-          placeholder: theme("colors.slate.300") as string
+          placeholder: theme("colors.slate.300") as string,
         },
         secondary: {
           background: theme("colors.white") as string,
@@ -36,7 +36,7 @@ const config: Config = {
           hoverBackground: theme("colors.slate.50") as string,
           outline: theme("colors.slate.300") as string,
           border: theme("colors.slate.200") as string,
-          placeholder: theme("colors.slate.400") as string
+          placeholder: theme("colors.slate.400") as string,
         },
         ghost: {
           background: "transparent",
@@ -44,8 +44,8 @@ const config: Config = {
           hoverBackground: theme("colors.slate.100") as string,
           outline: theme("colors.slate.200") as string,
           border: "transparent",
-          placeholder: theme("colors.slate.400") as string
-        }
+          placeholder: theme("colors.slate.400") as string,
+        },
       };
 
       const surfaceClasses = Object.entries(variants).reduce<
@@ -55,11 +55,14 @@ const config: Config = {
           backgroundColor: values.background,
           color: values.text,
           "&:hover": {
-            backgroundColor: values.hoverBackground
+            backgroundColor: values.hoverBackground,
           },
           "&:focus-visible": {
-            outlineColor: values.outline
-          }
+            outlineColor: values.outline,
+          },
+          "&[data-state='open']": {
+            outlineColor: values.outline,
+          },
         };
         return acc;
       }, {});
@@ -70,7 +73,7 @@ const config: Config = {
         acc[`.kokoa-border-${variant}`] = {
           borderWidth: "1px",
           borderStyle: "solid",
-          borderColor: values.border
+          borderColor: values.border,
         };
         return acc;
       }, {});
@@ -80,7 +83,7 @@ const config: Config = {
       >((acc, [variant, values]) => {
         acc[`.kokoa-placeholder-${variant}::placeholder`] = {
           color: values.placeholder,
-          opacity: "1"
+          opacity: "1",
         };
         return acc;
       }, {});
@@ -88,8 +91,8 @@ const config: Config = {
       addComponents(surfaceClasses);
       addUtilities(borderUtilities);
       addUtilities(placeholderUtilities);
-    })
-  ]
+    }),
+  ],
 };
 
 export default config;
