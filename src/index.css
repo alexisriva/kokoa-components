@@ -1,7 +1,74 @@
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
+@import "tailwindcss";
 
 :root {
   color-scheme: light;
 }
+
+@layer components {
+  /* Primary */
+  .kokoa-variant-primary {
+    background-color: var(--color-slate-900);
+    color: var(--color-white);
+  }
+  .kokoa-variant-primary:hover {
+    background-color: var(--color-slate-800);
+  }
+  .kokoa-variant-primary:focus-visible,
+  .kokoa-variant-primary[data-state='open'] {
+    outline-color: var(--color-slate-900);
+  }
+  .kokoa-border-primary {
+    border-width: 1px;
+    border-style: solid;
+    border-color: transparent;
+  }
+  .kokoa-placeholder-primary::placeholder {
+    color: var(--color-slate-300);
+    opacity: 1;
+  }
+
+  /* Secondary */
+  .kokoa-variant-secondary {
+    background-color: var(--color-white);
+    color: var(--color-slate-900);
+  }
+  .kokoa-variant-secondary:hover {
+    background-color: var(--color-slate-50);
+  }
+  .kokoa-variant-secondary:focus-visible,
+  .kokoa-variant-secondary[data-state='open'] {
+    outline-color: var(--color-slate-300);
+  }
+  .kokoa-border-secondary {
+    border-width: 1px;
+    border-style: solid;
+    border-color: var(--color-slate-200);
+  }
+  .kokoa-placeholder-secondary::placeholder {
+    color: var(--color-slate-400);
+    opacity: 1;
+  }
+
+  /* Ghost */
+  .kokoa-variant-ghost {
+    background-color: transparent;
+    color: var(--color-slate-900);
+  }
+  .kokoa-variant-ghost:hover {
+    background-color: var(--color-slate-100);
+  }
+  .kokoa-variant-ghost:focus-visible,
+  .kokoa-variant-ghost[data-state='open'] {
+    outline-color: var(--color-slate-200);
+  }
+  .kokoa-border-ghost {
+    border-width: 1px;
+    border-style: solid;
+    border-color: transparent;
+  }
+  .kokoa-placeholder-ghost::placeholder {
+    color: var(--color-slate-400);
+    opacity: 1;
+  }
+}
+
