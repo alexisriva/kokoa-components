@@ -2,75 +2,98 @@
 
 :root {
   color-scheme: light;
+
+  /* Primary Theme Variables */
+  --kokoa-primary-bg: var(--color-slate-900);
+  --kokoa-primary-text: var(--color-white);
+  --kokoa-primary-hover-bg: var(--color-slate-800);
+  --kokoa-primary-focus-ring: var(--color-slate-900);
+  --kokoa-primary-border: transparent;
+  --kokoa-primary-placeholder: var(--color-slate-300);
+
+  /* Secondary Theme Variables */
+  --kokoa-secondary-bg: var(--color-white);
+  --kokoa-secondary-text: var(--color-slate-900);
+  --kokoa-secondary-hover-bg: var(--color-slate-50);
+  --kokoa-secondary-focus-ring: var(--color-slate-300);
+  --kokoa-secondary-border: var(--color-slate-200);
+  --kokoa-secondary-placeholder: var(--color-slate-400);
+
+  /* Ghost Theme Variables */
+  --kokoa-ghost-text: var(--color-slate-900);
+  --kokoa-ghost-hover-bg: var(--color-slate-100);
+  --kokoa-ghost-focus-ring: var(--color-slate-200);
+  --kokoa-ghost-border: transparent;
+  --kokoa-ghost-placeholder: var(--color-slate-400);
 }
 
 @layer components {
   /* Primary */
   .kokoa-variant-primary {
-    background-color: var(--color-slate-900);
-    color: var(--color-white);
+    background-color: var(--kokoa-primary-bg);
+    color: var(--kokoa-primary-text);
   }
   button.kokoa-variant-primary:hover:not(:disabled):not([data-state='open']),
   a.kokoa-variant-primary:hover:not(:disabled):not([data-state='open']) {
-    background-color: var(--color-slate-800);
+    background-color: var(--kokoa-primary-hover-bg);
   }
   .kokoa-variant-primary:focus-visible,
   .kokoa-variant-primary[data-state='open'] {
-    outline-color: var(--color-slate-900);
+    outline-color: var(--kokoa-primary-focus-ring);
   }
   .kokoa-border-primary {
     border-width: 1px;
     border-style: solid;
-    border-color: transparent;
+    border-color: var(--kokoa-primary-border);
   }
   .kokoa-placeholder-primary::placeholder {
-    color: var(--color-slate-300);
+    color: var(--kokoa-primary-placeholder);
     opacity: 1;
   }
 
   /* Secondary */
   .kokoa-variant-secondary {
-    background-color: var(--color-white);
-    color: var(--color-slate-900);
+    background-color: var(--kokoa-secondary-bg);
+    color: var(--kokoa-secondary-text);
   }
   button.kokoa-variant-secondary:hover:not(:disabled):not([data-state='open']),
   a.kokoa-variant-secondary:hover:not(:disabled):not([data-state='open']) {
-    background-color: var(--color-slate-50);
+    background-color: var(--kokoa-secondary-hover-bg);
   }
   .kokoa-variant-secondary:focus-visible,
   .kokoa-variant-secondary[data-state='open'] {
-    outline-color: var(--color-slate-300);
+    outline-color: var(--kokoa-secondary-focus-ring);
   }
   .kokoa-border-secondary {
     border-width: 1px;
     border-style: solid;
-    border-color: var(--color-slate-200);
+    border-color: var(--kokoa-secondary-border);
   }
   .kokoa-placeholder-secondary::placeholder {
-    color: var(--color-slate-400);
+    color: var(--kokoa-secondary-placeholder);
     opacity: 1;
   }
 
   /* Ghost */
   .kokoa-variant-ghost {
     background-color: transparent;
-    color: var(--color-slate-900);
+    color: var(--kokoa-ghost-text);
   }
   button.kokoa-variant-ghost:hover:not(:disabled):not([data-state='open']),
   a.kokoa-variant-ghost:hover:not(:disabled):not([data-state='open']) {
-    background-color: var(--color-slate-100);
+    background-color: var(--kokoa-ghost-hover-bg);
   }
   .kokoa-variant-ghost:focus-visible,
   .kokoa-variant-ghost[data-state='open'] {
-    outline-color: var(--color-slate-200);
+    outline-color: var(--kokoa-ghost-focus-ring);
   }
   .kokoa-border-ghost {
     border-width: 1px;
     border-style: solid;
-    border-color: transparent;
+    border-color: var(--kokoa-ghost-border);
   }
   .kokoa-placeholder-ghost::placeholder {
-    color: var(--color-slate-400);
+    color: var(--kokoa-ghost-placeholder);
     opacity: 1;
   }
 }

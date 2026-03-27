@@ -140,6 +140,47 @@ export function FlavorSelect() {
 }
 ```
 
+## Theming
+
+`kokoa-components` uses CSS variables for its design tokens. You can easily customize the colors for any variant by overriding these variables in your project's global CSS (e.g., in your `:root`).
+
+### Primary Variant Customization
+
+To define a new color for the `primary` variant, override the following variables:
+
+```css
+:root {
+  --kokoa-primary-bg: #8b5cf6; /* Your brand color */
+  --kokoa-primary-hover-bg: #7c3aed;
+  --kokoa-primary-focus-ring: #8b5cf6;
+  /* Optional: change the text color as well */
+  --kokoa-primary-text: #ffffff;
+}
+```
+
+### All Customization Variables
+
+| Variable | Default Value |
+| :--- | :--- |
+| **Primary** | |
+| `--kokoa-primary-bg` | `slate-900` |
+| `--kokoa-primary-text` | `white` |
+| `--kokoa-primary-hover-bg` | `slate-800` |
+| `--kokoa-primary-focus-ring` | `slate-900` |
+| `--kokoa-primary-placeholder` | `slate-300` |
+| **Secondary** | |
+| `--kokoa-secondary-bg` | `white` |
+| `--kokoa-secondary-text` | `slate-900` |
+| `--kokoa-secondary-hover-bg` | `slate-50` |
+| `--kokoa-secondary-focus-ring` | `slate-300` |
+| `--kokoa-secondary-border` | `slate-200` |
+| `--kokoa-secondary-placeholder` | `slate-400` |
+| **Ghost** | |
+| `--kokoa-ghost-text` | `slate-900` |
+| `--kokoa-ghost-hover-bg` | `slate-100` |
+| `--kokoa-ghost-focus-ring` | `slate-200` |
+| `--kokoa-ghost-placeholder` | `slate-400` |
+
 ## Development
 
 - `npm run dev` – Start Vite for local component development.
