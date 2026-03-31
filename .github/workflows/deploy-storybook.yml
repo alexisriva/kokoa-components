@@ -1,8 +1,8 @@
-name: Deploy Storybook to GitHub Pages
+name: Deploy to GitHub Pages
 
 on:
   push:
-    branches: [main] # or your default branch
+    branches: [main]
   workflow_dispatch:
 
 permissions:
@@ -26,13 +26,16 @@ jobs:
       - name: Install deps
         run: npm ci
 
+      - name: Build Showcase
+        run: npm run build:showcase
+
       - name: Build Storybook
         run: npm run build:storybook
 
       - name: Upload Pages artifact
         uses: actions/upload-pages-artifact@v3
         with:
-          path: ./storybook-static
+          path: ./dist
 
   deploy:
     needs: build

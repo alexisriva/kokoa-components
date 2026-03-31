@@ -127,7 +127,7 @@ export const Dropdown = forwardRef<HTMLDivElement, DropdownProps>(
           disabled={disabled}
           data-state={isOpen ? "open" : "closed"}
           className={`
-            flex w-full min-w-48 items-center justify-between rounded-lg px-4 py-2.5 text-sm font-medium
+            flex w-full min-w-48 items-center justify-between rounded-lg px-4 py-2.5 text-sm font-medium cursor-pointer
             ${baseInteractiveClasses}
             ${variantClasses}
             ${isOpen ? "outline-2 outline-offset-2 z-10" : ""}

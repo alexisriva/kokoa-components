@@ -26,7 +26,7 @@ export const Button = forwardRef<HTMLButtonElement, ButtonProps>(
     ref,
   ) => {
     const classes = [
-      "inline-flex items-center justify-center gap-2 rounded-full px-6 py-2 text-sm font-medium",
+      "inline-flex items-center justify-center gap-2 rounded-full px-6 py-2 text-sm font-medium cursor-pointer",
       baseInteractiveClasses,
       composeVariantClasses(variant, {
         includeBorder: { primary: false, ghost: false },

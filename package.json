@@ -27,12 +27,13 @@
   "scripts": {
     "dev": "vite dev",
     "build": "tsc --project tsconfig.build.json && vite build",
+    "build:showcase": "vite build --config vite.showcase.config.ts",
+    "build:storybook": "storybook build -o dist/storybook",
     "preview": "vite preview",
     "test": "vitest run",
     "test:watch": "vitest",
     "prepare": "husky install",
-    "storybook": "storybook dev -p 6006",
-    "build:storybook": "storybook build"
+    "storybook": "storybook dev -p 6006"
   },
   "peerDependencies": {
     "react": "^18.2.0",

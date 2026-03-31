@@ -3,11 +3,10 @@ import type { ButtonHTMLAttributes } from "react";
 import {
   baseInteractiveClasses,
   composeVariantClasses,
-  type ComponentVariant
+  type ComponentVariant,
 } from "../../../theme/variants";
 
-export interface IconButtonProps
-  extends ButtonHTMLAttributes<HTMLButtonElement> {
+export interface IconButtonProps extends ButtonHTMLAttributes<HTMLButtonElement> {
   variant?: ComponentVariant;
   size?: "sm" | "md" | "lg";
 }
@@ -15,25 +14,34 @@ export interface IconButtonProps
 const sizeClasses: Record<NonNullable<IconButtonProps["size"]>, string> = {
   sm: "h-8 w-8 text-sm",
   md: "h-10 w-10 text-base",
-  lg: "h-12 w-12 text-lg"
+  lg: "h-12 w-12 text-lg",
 };
 
 export const IconButton = forwardRef<HTMLButtonElement, IconButtonProps>(
-  ({ className = "", variant = "primary", size = "md", type = "button", ...props }, ref) => {
+  (
+    {
+      className = "",
+      variant = "primary",
+      size = "md",
+      type = "button",
+      ...props
+    },
+    ref,
+  ) => {
     const classes = [
-      "inline-flex items-center justify-center rounded-md",
+      "inline-flex items-center justify-center rounded-md cursor-pointer",
       sizeClasses[size],
       baseInteractiveClasses,
       composeVariantClasses(variant, {
-        includeBorder: { primary: false, ghost: false }
+        includeBorder: { primary: false, ghost: false },
       }),
-      className
+      className,
     ]
       .filter(Boolean)
       .join(" ");
 
     return <button ref={ref} type={type} className={classes} {...props} />;
-  }
+  },
 );
 
 IconButton.displayName = "IconButton";

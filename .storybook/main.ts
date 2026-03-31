@@ -9,6 +9,10 @@ const config: StorybookConfig = {
   },
   docs: {
     autodocs: "tag"
+  },
+  viteFinal: async (config) => {
+    config.base = "/kokoa-components/storybook/";
+    return config;
   }
 };
 
