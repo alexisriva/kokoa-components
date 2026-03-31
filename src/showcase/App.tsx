@@ -1,5 +1,6 @@
 import { useState } from "react";
 import { Button, IconButton, Input, Pill, Textarea, Dropdown } from "../index";
+import logo from "../assets/logo.png";
 import type { ComponentVariant } from "../theme/variants";
 
 const VARIANTS: ComponentVariant[] = ["primary", "secondary", "ghost"];
@@ -179,7 +180,7 @@ export function App() {
     <div className="min-h-screen bg-slate-50">
       {/* Header */}
       <header className="bg-white border-b border-slate-200 px-8 py-5 flex items-center gap-4">
-        <img src="/logo.png" alt="Kokoa" className="h-16 w-16 object-contain" />
+        <img src={logo} alt="Kokoa" className="h-16 w-16 object-contain" />
         <div>
           <h1 className="text-xl font-bold text-slate-900">Kokoa Components</h1>
           <p className="text-sm text-slate-500">

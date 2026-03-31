@@ -12,6 +12,7 @@
     "**/*.test.ts",
     "**/*.test.tsx",
     "**/*.stories.tsx",
-    "src/showcase"
+    "src/showcase",
+    "src/assets"
   ]
 }
