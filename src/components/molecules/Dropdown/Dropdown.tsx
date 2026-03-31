@@ -127,10 +127,10 @@ export const Dropdown = forwardRef<HTMLDivElement, DropdownProps>(
           disabled={disabled}
           data-state={isOpen ? "open" : "closed"}
           className={`
-            flex w-full min-w-[12rem] items-center justify-between rounded-lg px-4 py-2.5 text-sm font-medium
+            flex w-full min-w-48 items-center justify-between rounded-lg px-4 py-2.5 text-sm font-medium
             ${baseInteractiveClasses}
             ${variantClasses}
-            ${isOpen ? "outline outline-2 outline-offset-2 z-10" : ""}
+            ${isOpen ? "outline-2 outline-offset-2 z-10" : ""}
           `}
         >
           <div className="flex items-center gap-3">
@@ -148,7 +148,7 @@ export const Dropdown = forwardRef<HTMLDivElement, DropdownProps>(
 
         {isOpen && (
           <div
-            className={`absolute left-0 top-full z-50 mt-2 w-full min-w-[12rem] origin-top-left rounded-lg p-1 shadow-xl ring-1 ring-black/5 ${variantClasses}`}
+            className={`absolute left-0 top-full z-50 mt-2 w-full min-w-48 origin-top-left rounded-lg p-1 shadow-xl ring-1 ring-black/5 ${variantClasses}`}
           >
             <div className="flex flex-col gap-1 max-h-60 overflow-auto">
               {options.map((option) => {
