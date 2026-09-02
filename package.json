@@ -7,7 +7,7 @@
   "version": "0.1.1",
   "description": "React component library scaffolded with Tailwind CSS styling.",
   "author": "",
-  "license": "MIT",
+  "license": "Apache-2.0",
   "main": "./dist/kokoa-components.cjs.js",
   "module": "./dist/kokoa-components.es.js",
   "types": "./dist/index.d.ts",
